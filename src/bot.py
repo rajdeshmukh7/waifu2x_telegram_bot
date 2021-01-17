@@ -3,7 +3,7 @@ import requests
 import json
 import urllib
 
-bot = telebot.TeleBot("TELEGRAM_TOKEN")
+bot = telebot.TeleBot("1422320146:AAFUg10byVtWnPvOA-nAJg7xNt1kJxNHSPE")
 
 
 @bot.message_handler(commands=['start', 'help'])
@@ -26,11 +26,11 @@ def handle_photo(message):
                 files={
                     'image': downloaded_file,
                 },
-                headers={'api-key': 'YOUR_API_KEY'}
+                headers={'api-key': 'bf6a1e13-5af8-40ce-be4a-9ca06841cbc9'}
             )
             data1 = json.dumps(r.json())
             data2 = json.loads(data1)
-        bot.reply_to(message, "Please wait")
+        bot.reply_to(message, "Please wait ...")
         url = data2['output_url']
         f = open('output.png', 'wb')
         f.write(urllib.request.urlopen(url).read())
@@ -57,7 +57,7 @@ def handle_docs(message):
                 files={
                     'image': downloaded_file,
                 },
-                headers={'api-key': 'YOUR_API_KEY'}
+                headers={'api-key': 'bf6a1e13-5af8-40ce-be4a-9ca06841cbc9'}
             )
             data1 = json.dumps(r.json())
             data2 = json.loads(data1)
